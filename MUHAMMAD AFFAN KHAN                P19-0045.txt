@@ -1,0 +1,152 @@
+#include <iostream>
+using namespace std;
+class Array{
+private:
+    int ar[20];
+    int *f;
+    int *temp;
+    int *templ;
+    int *tempr;
+
+public:
+    Array(){
+        for(int a{0}; a<20; a++)
+        {
+            ar = 0; 
+        }
+        f = ar;
+        temp  = NULL;
+        templ = NULL;
+        tempr = NULL;
+    }
+    void display()
+    void add(int t);
+    void mostfrequentelementinsubarray(int lft, int rgt, int fq);
+};
+void Array::add(int t)
+{
+    temp = f;
+    for(int a{0}; a<20; a++)
+    {
+        if(*(temp + a) == 0)
+        { 
+        *(temp+a) = t;
+        }
+      }
+    }
+void Array::display(){
+    for(int a{0}; a<20; a++)
+    {
+        cout << *(f +a) <<;
+}
+void Array::mostfrequentelementinsubarray(int lft, int rgt, int fq)
+{
+    int counter;
+    if(lft >= 0 && rgt >= lft && rgt < 20 && 2 * fq >= rgt - lft + 1)
+    {
+    tempr = f + rgt;
+    temp = templ;
+    templ = f + lft;
+    do while (temp != templ)
+    {
+        for (int a {0}; a < 20;a++)
+        {
+            if(*temp = *(temp+a))
+            {
+                counter++;
+                if(counter >= fq)
+                {
+                    cout << *temp;
+                }
+            }
+        }
+        temp = temp +1;
+        }
+    }
+}
+int main()
+{
+    Array Q;
+    int t;
+    int choices = 0;
+    int rgt;
+    int fq;
+    int lft;
+    cout << " 1 for adding  Data to Array " <<endl;
+    cout << " 2 for displaying the Array " <<endl;
+    cout << " 3 to check frequency" <<endl;
+    cout << "4 to Exit " <<endl;
+    do while(choices!= 4)
+    {
+    cout << "Enter your desired Choice " <<endl;
+    cin >> choices;
+    if(choices == 1)
+    {
+        cout << "Enter the  Data " <<endl;
+        int t;
+        cin >> t;
+        Q.add(t);
+    }
+     if(choices == 2)
+    {
+        Q.display();
+    }
+     if(choices == 3)
+    {
+        
+        cout << "Enter the index at Right" <<endl;
+        cin >> rgt;
+        cout << "Enter the index at Left " <<endl;
+        cin >> lft;
+        cout << "Enter frequency " <<rgt;
+        cin>> fq;
+        Q.mostfrequentelementinsubarray(lft,rgt,fq);
+    }
+    if(choices == 4){
+        exit;
+    }
+ 
+ }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+class  node
+{
+public:
+	int data;
+	int key;
+	node *next;
+	node()
+	{
+		key = 0;
+		data = 0;
+		next =NULL;
+}
+	node(int k, int d)
+	{
+		key = k;
+		data = d;
+	}
+	class singlylinkedlist
+	{
+	public:
+		node* head;
+		singlylinkedlist()
+		{
+			head = NULL;
+		}
+		singlylinkedlist(node* n)
+		{
+			head = n;
+		}
+		node*nodeexists(int k)
